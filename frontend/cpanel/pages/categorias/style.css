@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.categories {
+    display: flex;
+    gap: 1rem;
+}
+
+.category {
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 8px 16px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+.items-list {
+    margin: 1.5rem 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.items-list div {
+    /* border: 1px solid blue; */
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li {
+    width: 80%;
+    cursor: pointer;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+dialog {
+    width: 800px;
+    max-height: 500px;
+    margin: 0 auto;
+    padding: 1rem;
+    top: 10%;
+    border: none;
+    border-radius: .5rem;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+
+    overflow-y: auto;
+    position: relative;
+}
+
+dialog::backdrop {
+    background-color: rgb(0 0 0 / .5);
+}
+
+dialog #btnNewItem {
+    background-color: #006fff;
+    color: #fff;
+    padding: 0.8rem;
+
+    border: 0;
+    border-radius: 0.8rem;
+}
+
+dialog #close-modal-new-category {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+dialog input {
+    width: 90%;
+    padding: 1rem;
+    border-radius: 0.8rem;
+
+    outline: none;
+    border: 1px solid;
+}
+
+dialog #itemContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    gap: 1rem;
+
+    border: 1px solid green;
+    border-radius: 1rem;
+}
+
+dialog #itemContainer button {
+    background-color: red;
+    height: 2rem;
+
+    border-radius: 1rem;
+    border: 0;
+    outline: none;
+}
+
+dialog #btnActions {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.close-btn {
+    color: #888;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#item-modal .modal-content {
+    max-width: 400px;
+}
+
+#item-modal-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#item-modal-description {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#item-modal-image {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+#item-modal-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.active {
+    background-color: green;
+    color: #fff;
+}
