@@ -24,21 +24,24 @@ createNewItemBnt.addEventListener('click', createNewItem)
 const saveNewCategoryBtn = document.getElementById('saveNewCategoryBtn');
 saveNewCategoryBtn.addEventListener('click', saveNewCategory);
 
+const saveItemBtn = document.getElementById('save-item')
+saveItemBtn.onclick = () => saveItem()
+
 function createNewItem() {
     const newItemsList = document.getElementById('itens-list')
     const newItemContainer = document.createElement('div')
 
     const labelName = createLabel('Nome', 'itemName')
-    const Inputname = createInput('text', 'name')
+    const Inputname = createInput('text', 'itemName')
 
     const labelDescription = createLabel('Descrição', 'itemDescription')
-    const inputDescription = createInput('text', 'description')
+    const inputDescription = createInput('text', 'itemDescription')
 
     const labelPhoto = createLabel('Foto do produto', 'photo')
-    const inputPhoto = createInput('image', 'image')
+    const inputPhoto = createInput('image', 'photo')
 
-    const labelPrice = createLabel('Preço', 'itemDescription')
-    const inputPrice = createInput('number', 'price')
+    const labelPrice = createLabel('Preço', 'itemPrice')
+    const inputPrice = createInput('number', 'itemPrice')
 
     newItemContainer.id = 'itemContainer'
 
@@ -77,9 +80,6 @@ function addClassActive() {
         button.addEventListener('click', () => {
             categoryButtons.forEach((btn) => btn.classList.remove('active'));
             button.classList.add('active');
-
-            // showItems(bebidas)
-            showItems(button.innerText.toLowerCase());
         });
     });
 }
@@ -89,7 +89,7 @@ function saveNewCategory() {
     const name = document.getElementById('categoryName').value
 
     const div = document.createElement('div')
-    categories[name] = []
+    categories[name.toLowerCase()] = []
     div.innerText = name
     div.classList = 'category'
     div.onclick = () => showItems(name)
@@ -105,21 +105,20 @@ function showItems(category) {
     itemsList.innerHTML = '';
 
     const categoryItems = categories[category];
-    for (const item of categoryItems) {
-        const itemContainer = document.createElement('div')
-        const listItem = document.createElement('li');
-        const btnExcluir = document.createElement('span')
+    categoryItems.forEach((item, index) => {
+            const itemContainer = document.createElement('div')
+            const listItem = document.createElement('li');
+            const btnExcluir = document.createElement('span')
 
-        btnExcluir.innerHTML = '&times;'
-        btnExcluir.addEventListener('click', function () {
-            itemsList.removeChild(itemContainer)
-        })
-        listItem.textContent = item.name
-        listItem.onclick = () => showItemDetails(item);
+            btnExcluir.innerHTML = '&times;'
+            btnExcluir.onclick = () => deleteItem(category, index)
+            
+            listItem.textContent = item.name
+            listItem.onclick = () => showItemDetails(item);
 
-        itemContainer.append(listItem, btnExcluir)
-        itemsList.appendChild(itemContainer);
-    }
+            itemContainer.append(listItem, btnExcluir)
+            itemsList.appendChild(itemContainer);
+    })
 }
 
 function showItemDetails(item) {
@@ -153,10 +152,10 @@ function saveItem() {
     let isInputsFill = true; // Variável para verificar se todos os campos estão preenchidos corretamente
 
     items.forEach((item) => {
-        const name = item.querySelector(`input[type="text"][id="name"]`).value;
-        const description = item.querySelector(`input[type="text"][id="description"]`).value;
-        const image = item.querySelector(`input[type="image"][id="image"]`).value;
-        const price = parseFloat(item.querySelector(`input[type="number"][id="price"]`).value);
+        const name = item.querySelector(`input[type="text"][id="itemName"]`).value;
+        const description = item.querySelector(`input[type="text"][id="itemDescription"]`).value;
+        const image = item.querySelector(`input[type="image"][id="photo"]`).value;
+        const price = parseFloat(item.querySelector(`input[type="number"][id="itemPrice"]`).value);
 
         if (!name || !description || isNaN(price)) {
             alert('Por favor, preencha todos os campos corretamente.');
@@ -179,4 +178,12 @@ function saveItem() {
         showItems(categoryName.toLowerCase());
         itemsInsideList.innerHTML = ''
     }
+
+    console.log(categories)
+}
+
+function deleteItem(category, index) {
+    categories[category].splice(index, 1);
+    showItems(category)
+    console.log(categories)
 }
