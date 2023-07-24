@@ -1,0 +1,318 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.navbar {
+  background-color: #A020F0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-image a {
+  display: inline-block;
+  padding: 10px;
+  color: #333;
+  list-style: none;
+  margin-top: 0px;
+  
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  margin-right: 900px; 
+}
+
+@keyframes animateColor {
+  20% {
+    color: MidnightBlue;
+  }
+  40% {
+    color: Wheat;
+  }
+  60% {
+    color: Aquamarine;
+  }
+  80% {
+    color: GhostWhite;
+  }
+}
+
+.nav-text h1.animated-text {
+  margin: 0px;
+  animation: animateColor 5s infinite;
+  font-size: 50px;
+}
+
+
+.navbar ul {
+  list-style: none;
+  margin: 0px;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar li {
+  margin-right: 1rem;
+}
+
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.conteudo {
+  display: flex; 
+  justify-content: space-between; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 20px; 
+}
+
+.descricao {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  font-size: 20px;
+
+}
+
+.descricao li {
+  list-style: none;
+}
+
+.descricao a span {
+  color: #A020F0;
+  animation: blinkAnimation 1s infinite;
+}
+
+
+@keyframes blinkAnimation {
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.login {
+  max-width: 400px;
+  max-height: 300px;
+  margin: 2rem auto;
+  padding: 3rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  text-align: center;
+   
+}
+
+.login h1 {
+  margin-top: 0px;
+  margin-inline: 30px;
+
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+  margin-bottom: 0;
+}
+
+.login form input[type="text"],
+.login form input[type="password"],
+.login form button {
+  width: 100%;
+  padding: 0.4rem;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.login form button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 0px;
+}
+
+.login a {
+  display: flex; 
+  margin-bottom:0px;
+  text-align: left; 
+  font-size: 14px; 
+  color: #A020F0; 
+  text-decoration: none; 
+
+}
+
+.login a:hover {
+  text-decoration: underline; 
+}
+
+.avaliacoes {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.title{
+  display: flex;
+  margin-bottom: 300px;
+
+}
+
+.avaliacoes {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.clientes-lista {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.avaliacao {
+  width: 200px;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+
+.avaliacao img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.avaliacao p {
+  margin: 0;
+}
+
+.avaliacao .cliente {
+  font-style: italic;
+}
+
+.contact {
+  text-align: center;
+  margin-top: 2rem;
+  position: relative;
+  animation: moveLeftRight 2s linear infinite; 
+}
+
+.contact a {
+  text-decoration: none;
+}
+
+
+@keyframes moveLeftRight {
+  0%, 100% {
+    transform: translateX(0); 
+  }
+  50% {
+    transform: translateX(100px);
+  }
+}
+
+.redes-sociais {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.redes-sociais a {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin: 0 5px;
+  border: none; 
+}
+
+.redes-sociais a img {
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #A020F0;
+  color: #fff;
+
+}
+
+.footer ul {
+  list-style: none;
+ }
+
+.footer li {
+  margin-right: 1rem;
+  
+}
+
+.footer a {
+  text-decoration: none;
+  color: #fff;
+
+
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px; 
+  right: 20px; 
+  z-index: 999; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; 
+  height: 60px; 
+  border-radius: 50%; 
+  background-color: #25d366;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  animation: shake 0.8s infinite; 
+}
+
+.whatsapp-float img {
+  width: 30px; 
+  height: 30px; 
+}
+
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
