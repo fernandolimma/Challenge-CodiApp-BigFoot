@@ -5,27 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodiApp</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
 </head>
 <body>
   
   <nav class="navbar">
     <div class="nav-image">
       <a href="#"><img width="64" height="64" src="https://img.icons8.com/arcade/64/000000/cutlery.png" alt="cutlery"/></a>
+      <div class="nav-text"> 
+        <a href="#"><h1 class="animated-text">CodiApp</h1></a>
+      </div>
     </div>
     
-    <div class="nav-text"> 
-      <a href="#"><h1 class="animated-text">CodiApp</h1></a>
-    </div>
+    
   
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Sobre Nós</a></li>
-      <li><a href="#">Contato</a></li>
+      <li><a onclick="closeMobile()" href="#home">Home</a></li>
+      <li><a onclick="closeMobile()" href="#home">Sobre Nós</a></li>
+      <li><a onclick="closeMobile()" href="#contact">Contato</a></li>
     </ul>
+
+    <button class="button-mobile">
+      <i class="ph ph-list"></i>
+    </button>
+
+    <button class="close-mobile">
+      <i class="ph ph-x"></i>
+    </button>
   </nav>
 
-<div class="conteudo">
+<div class="conteudo" id="home">
    <div class="descricao">
     <h1>Bem-vindo ao <span style="color:#A020F0">CodiApp</span> </h1>
     <p>Incremente seu Delivery com o CodiApp!</p>
@@ -49,7 +59,7 @@ Acelere seu negócio e impulsione suas vendas hoje mesmo!</p>
        <form action="/login" method="POST">
           <input type="text" id="usuario" name="usuario" placeholder="E-mail" required>
           <input type="password" id="senha" name="senha" placeholder="Senha" required>
-      <button type="submit">Entrar</button>
+      <button class="button-login" type="submit">Entrar</button>
       <a href="#">Esqueci a senha</a>
     </form>
   </div>
@@ -57,7 +67,7 @@ Acelere seu negócio e impulsione suas vendas hoje mesmo!</p>
   
  <div class="avaliacoes">
   <div class="title">
-    <h1>Quem utiliza sempre <span style="color: #A020F0;">RECOMENDA</span></h1>
+    <h1>Quem utiliza sempre <span style="color: #A020F0;">Recomenda!</span></h1>
     </div>
   <ol class="clientes-lista">
     <li class="avaliacao">
@@ -78,7 +88,7 @@ Acelere seu negócio e impulsione suas vendas hoje mesmo!</p>
   </ol>
 </div>
   
-  <div class="contact">
+  <div class="contact" id="contact">
     <h2>Entre em contato agora pelo nosso <a href="#"><span style="color:#32CD32">WhatsApp</span></a>, ou se preferir pelas nossas redes sociais.</h2>
   </div>
 
@@ -103,6 +113,6 @@ Acelere seu negócio e impulsione suas vendas hoje mesmo!</p>
 
 </body>
 </html>
-
+<script src="script.js" defer></script>
 </body>
 </html>
