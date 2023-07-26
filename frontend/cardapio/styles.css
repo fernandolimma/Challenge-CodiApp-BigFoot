@@ -253,8 +253,15 @@ body.show .header .navigation .box-hour ul {
   filter: opacity(0.8);
 }
 
+.caixas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 8rem;
+}
+
 .caixas .imagem img {
-  width: 700px;
+  width: 100%;
   height: auto;
 }
 
@@ -285,4 +292,19 @@ body.show .header .navigation .box-hour ul {
   border: 1px solid #ccc;
   border-radius: 5px;
   overflow: hidden;
+}
+
+.input {
+  margin-top: 2rem;
+}
+
+.input input {
+  width: 100%;
+  padding: 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: 1.5rem;
+
+  color: var(--gray700);
 }
