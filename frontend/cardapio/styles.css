@@ -196,20 +196,20 @@ body.show .header .navigation .box-hour ul {
 }
 
 
-.links.layout ul {
+.links ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.links.layout li {
+.links li {
   display: inline-block;
   margin-right: 50px;
   text-align: center;
 
 }
 
-.links.layout {
+.links {
   background-color: #ffffff;
   padding: 10px;
   text-align: center ;
@@ -218,7 +218,7 @@ body.show .header .navigation .box-hour ul {
   
 }
 
-.links.layout ul {
+.links ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -227,12 +227,12 @@ body.show .header .navigation .box-hour ul {
   
 }
 
-.links.layout li {
+.links li {
   display: inline-block;
   margin-right: 10px;
 }
 
-.links.layout h2 {
+.links h2 {
   margin: 0;
   padding: 5px;
   font-size: 18px;
@@ -241,17 +241,17 @@ body.show .header .navigation .box-hour ul {
   font-family:  sans-serif;
 }
 
-.links.layout h2:hover {
+.links h2:hover {
   background-color: rgba(145, 217, 255, 0.868);
 }
 
-.links.layout .button {
+.links .button {
   background-color: var(--cyan400);
   border: none;
   border-radius: 4px;
 }
 
-.links.layout .button a {
+.links .button a {
   color: rgb(0, 0, 0);
   text-decoration: underline;
   
@@ -259,9 +259,14 @@ body.show .header .navigation .box-hour ul {
   padding: 10px;
 }
 
+.caixas {
 
+ width: 400px;
+ 
+
+}
 .caixas .imagem {
-  width: 100%;
+  width: 70%;
   height: auto;
 }
 
