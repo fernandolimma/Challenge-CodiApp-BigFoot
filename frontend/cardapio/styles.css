@@ -210,9 +210,12 @@ body.show .header .navigation .box-hour ul {
 }
 
 .links.layout {
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   padding: 10px;
   text-align: center ;
+    border: none;
+  
+  
 }
 
 .links.layout ul {
@@ -221,6 +224,7 @@ body.show .header .navigation .box-hour ul {
   margin: 0;
   display: flex;
   justify-content: center;
+  
 }
 
 .links.layout li {
@@ -232,24 +236,61 @@ body.show .header .navigation .box-hour ul {
   margin: 0;
   padding: 5px;
   font-size: 18px;
-  color: #333;
+  color: #ffffff;
   text-decoration: none;
+  font-family:  sans-serif;
 }
 
 .links.layout h2:hover {
-  background-color: rgb(0, 119, 0);
+  background-color: rgba(145, 217, 255, 0.868);
 }
 
 .links.layout .button {
-  background-color: #4CAF50;
+  background-color: var(--cyan400);
   border: none;
   border-radius: 4px;
 }
 
 .links.layout .button a {
-  color: green;
+  color: rgb(0, 0, 0);
   text-decoration: underline;
   
   display: block;
   padding: 10px;
+}
+
+
+.caixas .imagem {
+  width: 100%;
+  height: auto;
+}
+
+.caixas .texto {
+  overflow: hidden;
+}
+
+.caixas h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.caixas p {
+  font-size: 16px;
+  margin: 0;
+}
+.caixa .imagem {
+  width: 100px;
+  height:auto ;
+}
+.caixa {
+
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  
+
 }
