@@ -194,3 +194,16 @@ body.show .header .navigation .box-hour ul {
   line-height: 140%;
   color: var(--gray400);
 }
+
+
+  .links ul {
+    display: flex;
+    width: auto;
+    height: auto;
+
+      
+  }
+
+  .links ul li {
+    list-style: none;
+  }
