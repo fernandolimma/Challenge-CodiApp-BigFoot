@@ -195,7 +195,6 @@ body.show .header .navigation .box-hour ul {
   color: var(--gray400);
 }
 
-
 .links ul {
   list-style: none;
   padding: 0;
@@ -206,16 +205,12 @@ body.show .header .navigation .box-hour ul {
   display: inline-block;
   margin-right: 50px;
   text-align: center;
-
 }
 
 .links {
-  background-color: #ffffff;
   padding: 10px;
-  text-align: center ;
-    border: none;
-  
-  
+  text-align: center;
+  border: none;
 }
 
 .links ul {
@@ -224,7 +219,6 @@ body.show .header .navigation .box-hour ul {
   margin: 0;
   display: flex;
   justify-content: center;
-  
 }
 
 .links li {
@@ -238,11 +232,7 @@ body.show .header .navigation .box-hour ul {
   font-size: 18px;
   color: #ffffff;
   text-decoration: none;
-  font-family:  sans-serif;
-}
-
-.links h2:hover {
-  background-color: rgba(145, 217, 255, 0.868);
+  font-family: sans-serif;
 }
 
 .links .button {
@@ -252,21 +242,19 @@ body.show .header .navigation .box-hour ul {
 }
 
 .links .button a {
-  color: rgb(0, 0, 0);
-  text-decoration: underline;
-  
+  text-decoration: none;
+  color: var(--gray100);
   display: block;
   padding: 10px;
+  font-weight: bold;
 }
 
-.caixas {
-
- width: 400px;
- 
-
+.links .button a:hover {
+  filter: opacity(0.8);
 }
-.caixas .imagem {
-  width: 70%;
+
+.caixas .imagem img {
+  width: 300px;
   height: auto;
 }
 
@@ -283,19 +271,18 @@ body.show .header .navigation .box-hour ul {
   font-size: 16px;
   margin: 0;
 }
+
 .caixa .imagem {
   width: 100px;
-  height:auto ;
+  height: auto;
 }
+
 .caixa {
-
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-  
-
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
 }
