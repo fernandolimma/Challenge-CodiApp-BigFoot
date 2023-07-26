@@ -9,14 +9,16 @@ const modal = document.getElementById('modal')
 const modalNewCategoty = document.getElementById('modal-new-category')
 
 const openModalBnt = document.getElementById('open-modal-btn')
-openModalBnt.onclick = () => modal.showModal()
+openModalBnt.addEventListener('click', () => modal.showModal())
+
 const closeModalBtn = document.getElementById('close-modal')
-closeModalBtn.onclick = () => modal.close()
+closeModalBtn.addEventListener('click', () => modal.close())
 
 const openModalNewCategoryBtn = document.getElementById('open-modal-new-category')
-openModalNewCategoryBtn.onclick = () => modalNewCategoty.showModal()
+openModalNewCategoryBtn.addEventListener('click', () => modalNewCategoty.showModal())
+
 const closeModalNewCategoryBtn = document.getElementById('close-modal-new-category')
-closeModalNewCategoryBtn.onclick = () => modalNewCategoty.close()
+closeModalNewCategoryBtn.addEventListener('click', () => modalNewCategoty.close())
 
 const createNewItemBnt = document.getElementById('btnNewItem')
 createNewItemBnt.addEventListener('click', createNewItem)
@@ -25,7 +27,7 @@ const saveNewCategoryBtn = document.getElementById('saveNewCategoryBtn');
 saveNewCategoryBtn.addEventListener('click', saveNewCategory);
 
 const saveItemBtn = document.getElementById('save-item')
-saveItemBtn.onclick = () => saveItem()
+saveItemBtn.addEventListener('click', saveItem)
 
 function createNewItem() {
     const newItemsList = document.getElementById('itens-list')
@@ -38,7 +40,7 @@ function createNewItem() {
     const inputDescription = createInput('text', 'itemDescription')
 
     const labelPhoto = createLabel('Foto do produto', 'photo')
-    const inputPhoto = createInput('image', 'photo')
+    const inputPhoto = createInput('file', 'photo')
 
     const labelPrice = createLabel('Preço', 'itemPrice')
     const inputPrice = createInput('number', 'itemPrice')
@@ -53,7 +55,17 @@ function createNewItem() {
         newItemsList.removeChild(newItemContainer)
     })
 
-    newItemContainer.append(labelName, Inputname, labelDescription, inputDescription, labelPhoto, inputPhoto, labelPrice, inputPrice, btnRemoveItem)
+    newItemContainer.append(
+        labelName,
+        Inputname,
+        labelDescription,
+        inputDescription,
+        labelPhoto,
+        inputPhoto,
+        labelPrice,
+        inputPrice,
+        btnRemoveItem
+    )
     newItemsList.append(newItemContainer)
 }
 
@@ -88,6 +100,11 @@ function saveNewCategory() {
     const categoriesElement = document.querySelector('.categories')
     const name = document.getElementById('categoryName').value
 
+    if(name.trim() === '') {
+        alert('Por favor, insira um nome válido para a categoria')
+        return
+    }
+
     const div = document.createElement('div')
     categories[name.toLowerCase()] = []
     div.innerText = name
@@ -106,18 +123,18 @@ function showItems(category) {
 
     const categoryItems = categories[category];
     categoryItems.forEach((item, index) => {
-            const itemContainer = document.createElement('div')
-            const listItem = document.createElement('li');
-            const btnExcluir = document.createElement('span')
+        const itemContainer = document.createElement('div')
+        const listItem = document.createElement('li');
+        const btnExcluir = document.createElement('span')
 
-            btnExcluir.innerHTML = '&times;'
-            btnExcluir.onclick = () => deleteItem(category, index)
-            
-            listItem.textContent = item.name
-            listItem.onclick = () => showItemDetails(item);
+        btnExcluir.innerText = 'x'
+        btnExcluir.onclick = () => deleteItem(category, index)
 
-            itemContainer.append(listItem, btnExcluir)
-            itemsList.appendChild(itemContainer);
+        listItem.textContent = item.name
+        listItem.onclick = () => showItemDetails(item);
+
+        itemContainer.append(listItem, btnExcluir)
+        itemsList.appendChild(itemContainer);
     })
 }
 
@@ -154,7 +171,7 @@ function saveItem() {
     items.forEach((item) => {
         const name = item.querySelector(`input[type="text"][id="itemName"]`).value;
         const description = item.querySelector(`input[type="text"][id="itemDescription"]`).value;
-        const image = item.querySelector(`input[type="image"][id="photo"]`).value;
+        const image = item.querySelector(`input[type="file"][id="photo"]`).value;
         const price = parseFloat(item.querySelector(`input[type="number"][id="itemPrice"]`).value);
 
         if (!name || !description || isNaN(price)) {
