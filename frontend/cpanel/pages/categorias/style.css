@@ -7,7 +7,7 @@
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 1.2rem;
 }
 
 .categories {
@@ -80,7 +80,7 @@ dialog #close-modal-new-category {
 }
 
 dialog input {
-    width: 90%;
+    width: 100%;
     padding: 1rem;
     border-radius: 0.8rem;
 
