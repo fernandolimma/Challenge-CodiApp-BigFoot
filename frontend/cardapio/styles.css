@@ -257,11 +257,11 @@ body.show .header .navigation .box-hour ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.5rem;
-  margin-top: 8rem;
+  margin-top: 2rem;
 }
 
 .caixas .imagem img {
-  width: 100%;
+  width: 10rem;
   height: auto;
 }
 
@@ -307,4 +307,37 @@ body.show .header .navigation .box-hour ul {
   font-size: 1.5rem;
 
   color: var(--gray700);
+}
+
+
+.title{
+  margin-top: 4rem;
+  text-align: center ;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--gray700);
+}
+
+
+.box-cardapio,.texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.texto h2 {
+  color: var(--cyan800);
+}
+.box-model {
+
+  background-color: var(--gray500);
+  height: 20remrem;
+  width: 21rem;
+padding: 4rem;
+border: 4rem var(--cyan500);
+
+
+
+  
 }
