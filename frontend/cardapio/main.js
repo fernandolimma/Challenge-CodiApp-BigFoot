@@ -52,6 +52,20 @@ const data = [
 
     
   },
+  {
+    image:
+      "https://img.freepik.com/fotos-gratis/cheeseburguer-grelhado-com-tomate-cebola-e-fritas-gerado-por-ia_188544-43039.jpg",
+    title: "X-Burguer",
+    description: "Pão, Carne, queijo , molho especial.",
+    price: 19.99,
+  },
+  {
+    image:
+      "https://img.freepik.com/fotos-gratis/cheeseburguer-grelhado-com-tomate-cebola-e-fritas-gerado-por-ia_188544-43039.jpg",
+    title: "X-Burguer",
+    description: "Pão, Carne, queijo , molho especial.",
+    price: 19.99,
+  },
 ]
 
 
