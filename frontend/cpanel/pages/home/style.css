@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    padding: 1rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 5rem;
+    padding-top: 5rem;
+}
+
+main div {
+    width: 300px;
+    height: 200px;
+
+    position: relative;
+    border: 1px solid #A020F0;
+}
+
+main div h2 {
+    position: absolute;
+    top: 4rem;
+    right: 0.5rem;
+
+    text-align: end;
+}
+
+main div .background-img {
+    background-image: url(img/loja.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+}
+
+main div:hover {
+    cursor: pointer;
+}
