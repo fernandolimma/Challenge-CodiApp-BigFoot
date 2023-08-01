@@ -298,6 +298,23 @@ body.show .header .navigation .box-hour ul {
   margin-top: 2rem;
 }
 
+.input2{
+
+margin-top: 2rem;
+}
+
+.input2 .input{
+  width: 0.5rem;
+  padding: 1.0rem;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: 1.5rem;
+
+  color: var(--gray700);
+
+}
+
 .input input {
   width: 100%;
   padding: 1.5rem;
@@ -331,13 +348,17 @@ body.show .header .navigation .box-hour ul {
 }
 .box-model {
 
-  background-color: var(--gray500);
+  background-color: var(--gray400);
   height: 20remrem;
   width: 21rem;
 padding: 4rem;
 border: 4rem var(--cyan500);
+}
 
-
-
-  
+.title2{
+  margin-top: 4rem;
+  text-align: center ;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--gray700);
 }

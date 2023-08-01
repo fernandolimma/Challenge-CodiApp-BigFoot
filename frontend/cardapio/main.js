@@ -3,29 +3,29 @@ const buttonRemoveHour = document.querySelector(".close-hour")
 const body = document.querySelector("body")
 const boxCardapio = document.querySelector(".caixas")
 
-const data = [
+const data =[
   {
     image:
       "https://img.freepik.com/fotos-gratis/cheeseburguer-grelhado-com-tomate-cebola-e-fritas-gerado-por-ia_188544-43039.jpg",
     title: "X-Burguer",
     description:  "Pão, Carne, queijo , molho especial.",
-    price: 19.99,
+    price: 23.99,
     
   
   },
   {
     image:
       "https://img.freepik.com/fotos-premium/burger-costeleta-dupla-queijo-cheddar-duplo-bacon-cebola-frita-picles-molho-e-pao-artesanal_524291-99.jpg?size=626&ext=jpg&ga=GA1.1.462900268.1690408347&semt=sph",
-    title: "X-Burguer",
-    description: "Pão , Carne , Quiejo , Molho especial",
-    price: 19.99,
+    title: "Duplo burquer",
+    description: "Pão , Carne , Quiejo , bacon , molho especial",
+    price: 26.99,
   },
   {
    image:
       "https://img.freepik.com/fotos-gratis/hamburguer-de-vista-frontal-em-um-carrinho_141793-15542.jpg?size=626&ext=jpg&ga=GA1.2.462900268.1690408347&semt=sph",
     title: "X-Burguer",
-    description: " Pão ,Carne, Quiejo , molho especial",
-    price: 19.99,
+    description: " Pão brioche ,Carne, cheddar , farofa de bacon , salada ",
+    price: 39.99,
   },
   {
     image:
@@ -71,6 +71,8 @@ const data = [
 
 
 
+
+
 buttonOpenHour.addEventListener("click", () => {
   body.classList.add("show")
 })
@@ -102,6 +104,12 @@ const element = data.map((info) => {
   `
 })
 
+
+
 boxCardapio.innerHTML = element.join("")
+
+
+
+
 
 
