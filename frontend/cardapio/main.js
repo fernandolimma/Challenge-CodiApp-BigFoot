@@ -2,6 +2,7 @@ const buttonOpenHour = document.querySelector(".button-hour");
 const buttonRemoveHour = document.querySelector(".close-hour");
 const body = document.querySelector("body");
 const boxCardapio = document.querySelector(".caixas");
+const sectionAcai = document.querySelector('.section-acai')
 
 const data = [
   {
@@ -62,6 +63,31 @@ const data = [
   },
 ];
 
+const database = [
+  {
+    image:
+      "https://flordejambu.com/wp-content/uploads/2022/05/acai.png",
+    title: "Açaí de Banana",
+    description: "Açaí, banana, paçoca, leite ninho, leite moça",
+    price: 23.99,
+  },
+  {
+    image:
+      "https://receitinhas.com.br/wp-content/uploads/2023/05/acai-na-tigela.jpg",
+    title: "Duplo Burguer",
+    description: "Açaí, banana, paçoca, leite ninho, leite moça",
+    price: 26.99,
+  },
+  {
+    image:
+      "https://s2-g1.glbimg.com/a3pjwKyfXTpr98tV5Uy4yri9NBQ=/0x0:1404x936/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/5/H/3C4bcDTWGNxO0Qlux1uQ/shutterstock-1580877226.jpg",
+    title: "X-Burguer",
+    description: " Açaí, banana, paçoca, leite ninho, leite moça ",
+    price: 39.99,
+  },
+  
+];
+
 buttonOpenHour.addEventListener("click", () => {
   body.classList.add("show");
 });
@@ -90,4 +116,25 @@ const element = data.map((info) => {
   `;
 });
 
+const el = database.map(info => {
+  return `
+  <div class="box-model">
+  <div class="box-cardapio">
+      <img
+        src="${info.image}"
+        alt="Descrição da Imagem"
+      />
+    <div class="texto">
+      <h2>${info.title}</h2>
+      <p>${info.description}</p>
+      <strong>R$${info.price}</strong>
+      <button>Adicionar</button>
+    </div>
+
+  </div>
+</div>
+  `
+})
+
 boxCardapio.innerHTML = element.join("");
+sectionAcai.innerHTML = el.join("")
