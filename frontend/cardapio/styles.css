@@ -195,6 +195,8 @@ body.show .header .navigation .box-hour ul {
   color: var(--gray400);
 }
 
+/* =======================> links <================================*/
+
 .links ul {
   list-style: none;
   padding: 0;
@@ -226,15 +228,6 @@ body.show .header .navigation .box-hour ul {
   margin-right: 10px;
 }
 
-.links h2 {
-  margin: 0;
-  padding: 5px;
-  font-size: 18px;
-  color: #ffffff;
-  text-decoration: none;
-  font-family: sans-serif;
-}
-
 .links .button {
   background-color: var(--cyan400);
   border: none;
@@ -260,59 +253,12 @@ body.show .header .navigation .box-hour ul {
   margin-top: 2rem;
 }
 
-.caixas .imagem img {
-  width: 10rem;
-  height: auto;
-}
-
-.caixas .texto {
-  overflow: hidden;
-}
-
 .caixas h2 {
-  font-size: 20px;
-  margin: 0;
-}
-
-.caixas p {
-  font-size: 16px;
-  margin: 0;
-}
-
-.caixa .imagem {
-  width: 100px;
-  height: auto;
-}
-
-.caixa {
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  overflow: hidden;
+  font-size: 1.125rem;
 }
 
 .input {
   margin-top: 2rem;
-}
-
-.input2{
-
-margin-top: 2rem;
-}
-
-.input2 .input{
-  width: 0.5rem;
-  padding: 1.0rem;
-  border: none;
-  outline: none;
-  border-radius: 8px;
-  font-size: 1.5rem;
-
-  color: var(--gray700);
-
 }
 
 .input input {
@@ -326,39 +272,64 @@ margin-top: 2rem;
   color: var(--gray700);
 }
 
-
-.title{
+.title,
+.title2 {
   margin-top: 4rem;
-  text-align: center ;
+  text-align: center;
   font-size: 1.5rem;
   font-weight: 900;
   color: var(--gray700);
 }
 
-
-.box-cardapio,.texto {
+.box-cardapio {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.box-cardapio img {
+  width: 100%;
+  height: 14rem;
+  object-fit: cover;
 }
 
 .texto h2 {
   color: var(--cyan800);
 }
-.box-model {
 
-  background-color: var(--gray400);
-  height: 20remrem;
-  width: 21rem;
-padding: 4rem;
-border: 4rem var(--cyan500);
+.box-model {
+  height: auto;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.title2{
-  margin-top: 4rem;
-  text-align: center ;
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: var(--gray700);
+.texto {
+  padding: 1rem;
+}
+
+.texto button {
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 6px;
+  background-color: var(--cyan600);
+  border: none;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: var(--gray100);
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.texto button:hover {
+  filter: brightness(0.8);
 }
