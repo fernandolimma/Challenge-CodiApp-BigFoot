@@ -25,6 +25,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--gray100);
 }
@@ -38,6 +42,12 @@ body {
 /* =======================> header <================================*/
 .header {
   padding: 1.5rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--gray100);
+  z-index: 10;
 }
 
 .header .box-logo {
@@ -204,28 +214,23 @@ body.show .header .navigation .box-hour ul {
 }
 
 .links li {
-  display: inline-block;
-  margin-right: 50px;
   text-align: center;
 }
 
 .links {
-  padding: 10px;
+  margin-top: 1rem;
   text-align: center;
   border: none;
 }
 
 .links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   justify-content: center;
+  gap: 1rem;
 }
 
-.links li {
-  display: inline-block;
-  margin-right: 10px;
+.links ul li {
+  list-style: none;
 }
 
 .links .button {
@@ -340,4 +345,17 @@ body.show .header .navigation .box-hour ul {
 
 .texto button:hover {
   background-color: var(--cyan600)
+}
+
+
+@media(max-width: 680px) {
+  .caixas, .section-acai {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 450px) {
+  .caixas, .section-acai {
+    grid-template-columns: 1fr;
+  }
 }

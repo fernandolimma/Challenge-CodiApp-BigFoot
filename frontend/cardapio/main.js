@@ -3,6 +3,16 @@ const buttonRemoveHour = document.querySelector(".close-hour");
 const body = document.querySelector("body");
 const boxCardapio = document.querySelector(".caixas");
 const sectionAcai = document.querySelector('.section-acai')
+const buttonOpenMobile = document.querySelector('.open-mobile')
+const buttonCloseMobile = document.querySelector('.close-mobile')
+
+buttonOpenMobile.addEventListener('click', () => {
+  body.classList.add('mobile')
+})
+
+buttonCloseMobile.addEventListener('click', () => {
+  body.classList.remove('mobile')
+})
 
 const data = [
   {
@@ -138,3 +148,5 @@ const el = database.map(info => {
 
 boxCardapio.innerHTML = element.join("");
 sectionAcai.innerHTML = el.join("")
+
+
