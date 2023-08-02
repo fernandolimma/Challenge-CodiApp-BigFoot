@@ -273,7 +273,8 @@ body.show .header .navigation .box-hour ul {
 }
 
 .title,
-.title2 {
+.title2,
+.title3 {
   margin-top: 4rem;
   text-align: center;
   font-size: 1.5rem;
