@@ -10,7 +10,7 @@ const server = express();
 server.use(cors());
 server.use(bodyParser.urlencoded({extended: false}));
 
-server.use('/api', routes);
+server.use(routes);
 
 server.listen(port, ()=> {
     console.log(`Servidor rodando em: http://localhost:${port}`);
