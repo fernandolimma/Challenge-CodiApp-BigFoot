@@ -48,6 +48,10 @@
     cursor: pointer;
   }
 
+  .header .navigation .open-cart {
+    right: 8rem;
+  }
+
   body.mobile .header .navigation .open-mobile {
     opacity: 0;
     visibility: hidden;
@@ -87,18 +91,17 @@
     color: var(--gray500);
   }
 
-  .links ul li a {
+  main .links-category ul li a {
     font-size: 0.875rem;
   }
 
-  .links ul {
+  main .links-category ul {
     align-items: center;
     min-width: 450px;
   }
 
-  .links {
-    overflow: auto;
+  main .links-category {
+   overflow: auto;
+   padding: 1rem;
   }
-
-
 }
