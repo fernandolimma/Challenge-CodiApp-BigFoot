@@ -153,13 +153,8 @@ function showItemDetails(item) {
     itemModalDetails.showModal();
 }
 
-function closeItemModalDetails() {
-    const itemModalDetails = document.getElementById('item-modal-details');
-    itemModalDetails.close()
-}
-
 function saveItem() {
-    const categoryName = document.querySelector('.category.active').innerText;
+    const activeCategory = document.querySelector('.category.active').innerText;
 
     const itemsInsideList = document.querySelector('#modal #itens-list')
     const items = document.querySelectorAll('#itemContainer')
@@ -190,9 +185,9 @@ function saveItem() {
     })
 
     if (isInputsFill) {
-        categories[categoryName.toLowerCase()].push(...newItems);
+        categories[activeCategory.toLowerCase()].push(...newItems);
         modal.close();
-        showItems(categoryName.toLowerCase());
+        showItems(activeCategory.toLowerCase());
         itemsInsideList.innerHTML = ''
     }
 
