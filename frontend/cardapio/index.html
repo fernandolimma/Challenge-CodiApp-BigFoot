@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Bebas+Neue:regular" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./public/css/responsividade.css">
+  <link rel="stylesheet" href="./public/css/styles.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <title>Big Food</title>
+</head>
+
+<body>
+  <header class="header">  <!--Header-->
+    <nav class="navigation layout">
+      <div class="box-logo">
+        <img src="./public//assets/hamburguer.svg" alt="Imagem de um hamburguer" />
+        <strong>Codi Lanches</strong>
+      </div>
+
+      <div class="box-hour">
+        <span class="text-hour">Horário de funcionamento</span>
+        <button class="button-hour">Clique</button>
+        <ul>
+          <li>Segunda: 18h às 23h</li>
+          <li>Terça: 18h às 23h</li>
+          <li>Quarta: 18h às 23h</li>
+          <li>Quinta: 18h às 23h</li>
+          <li>sexta: 18h às 23h</li>
+          <li>Sábado: 18h às 23h</li>
+          <li>Domingo: 18h às 23h</li>
+
+          <button class="close-hour">
+            <i class="ph ph-x-circle"></i>
+          </button>
+        </ul>
+      </div>
+
+      <a class="menu" href="#cardapio">Cardápio</a>
+
+      <button class="open-mobile">
+        <i class="ph ph-list"></i>
+      </button>
+
+      <button class="close-mobile">
+        <i class="ph ph-x"></i>
+      </button>
+
+      <button class="button-open-cart">
+        <i class="ph ph-shopping-cart">
+          <span>0</span>
+        </i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="banner"> <!---Banner-->
+      <div class="banner-text layout">
+        <h1>Bem vindo a Codi Lanches</h1>
+        <p>
+          Bem vindos ao hamburgueria do codi App. Aqui vc encontra os melhores
+          preços , descontos e o melhor sabor da sua cidade ,venha conferir!!
+          São dezenas de ofertas e sabores para vc esperimentar!
+        </p>
+      </div>
+    </div>
+
+    <div class="links-category layout"> <!--links category-->
+      <ul>
+        <li>
+          <a href="#">Hamburguers</a>
+        </li>
+        <li>
+          <a href="#">Bebidas</a>
+        </li>
+        <li>
+          <a href="#">Açai</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="search-cardapio layout"> <!---Buscar cardapio-->
+      <input type="text" placeholder="Pesquisar no cardápio">
+    </div>
+
+    <div class="title layout">
+      <h2>Hamburguers</h2>
+    </div>
+
+    <section class="category-hamburgers layout"><!--category burgers--> </section>
+
+    <div class="title layout">
+      <h2>Bebidas</h2>
+    </div>
+
+    <section class="category-drink layout"><!--category drinks---> </section>
+
+    <div class="section-cart">
+      <div class="info layout">
+          <h3>Informações do pedido</h3>
+          <strong>Total: R$32,00</strong>
+      </div>
+      <div class="cart layout"></div>
+
+      <div class="cart-footer layout">
+        <h4>Continue comprando abaixo </h4>
+        <i class="ph ph-arrow-circle-down"></i>
+      </div>
+    </div>
+  </main>
+
+  <footer><!--footer-->
+    <div class="info-footer layout">
+      <div class="box-logo">
+        <img src="./public//assets/hamburguer.svg" alt="">
+        <strong>Codi <span>Lanches</span></strong>
+      </div>
+
+      <div class="contact">
+        <h3>Contato</h3>
+        <p>(32) 9 9813-9420</p>
+      </div>
+
+      <div class="address">
+        <h3>Endereço</h3>
+        <p>Av Rio Branco Nº 1000 - Centro</p>
+      </div>
+    </div>
+    <p>Copyright @ 2023 Codi Lanches. All Right Reserved</p>
+  </footer>
+  <script type="module" src="./public/javascript/main.js"></script>
+</body>
+
+</html>
