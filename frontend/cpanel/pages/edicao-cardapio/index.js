@@ -153,6 +153,11 @@ function showItemDetails(item) {
     itemModalDetails.showModal();
 }
 
+function closeItemModalDetails() {
+    const itemModalDetails = document.getElementById('item-modal-details');
+    itemModalDetails.close()
+}
+
 function saveItem() {
     const activeCategory = document.querySelector('.category.active').innerText;
 
