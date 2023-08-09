@@ -1,14 +1,20 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100vh;
 	background-image: url(fundologin.png);
     background-size: cover;
+}
+
+.navbar{
+    width: 100%;
+    height: 55px;
+    background-color: #8b49c6;
+    color: white;
+    display: flex;
+    position: absolute;
+    top:0px;
     overflow: hidden;
 }
+
 .box{
     color: white;
     position: absolute;
@@ -23,13 +29,7 @@ body{
 fieldset{
     border: 3px solid rgb(0, 0, 0);
 }
-legend{
-    border: 1px solid #6f42c1;
-    padding: 15px;
-    text-align: center;
-    background-color: #6f42c1;
-    border-radius: 8px;
-}
+
 .inputBox{
     position: relative;
 }
@@ -63,7 +63,7 @@ legend{
 }
 
 #submit{
-    background-color: #6f42c1;
+    background-color: #8b49c6;
     width: 100%;
     border: none;
     padding: 15px;

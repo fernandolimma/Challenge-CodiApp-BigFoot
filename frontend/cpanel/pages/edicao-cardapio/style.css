@@ -1,7 +1,35 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;    
+}
+
+body{
+    background-image: url(fundologin.png);
+    background-size: cover;
+}
+
+.navbar{
+    width: 100%;
+    height: 55px;
+    background-color: #8b49c6;
+    color: white;
+    display: flex;
+    position: absolute;
+    top:0px;
+    overflow: hidden;
+}
+
+.box{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 15px;
+    width: 50%;
 }
 
 .container {
@@ -10,16 +38,29 @@
     padding: 1.2rem;
 }
 
+#open-modal-new-category{
+    background-color: #8b49c6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 8px 16px;
+    border: none;    
+    border-radius: 5px;
+}
+
 .categories {
     display: flex;
-    gap: 1rem;
+    gap: 1px;
+   
 }
 
 .category {
     cursor: pointer;
     margin-top: 1rem;
     padding: 8px 16px;
-    background-color: #f2f2f2;
+    background-color:whitesmoke;
+    color: #888;
     border-radius: 5px;
 }
 
@@ -29,6 +70,7 @@
 
 ul {
     list-style-type: none;
+    display: flex;
 }
 
 .items-list div {
@@ -37,6 +79,17 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+#open-modal-btn{
+    background-color: #8b49c6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 8px 16px;
+    border: none;    
+    border-radius: 5px;
 }
 
 li {
@@ -65,10 +118,9 @@ dialog::backdrop {
 }
 
 dialog #btnNewItem {
-    background-color: #006fff;
+    background-color: #8b49c6;
     color: #fff;
     padding: 0.8rem;
-
     border: 0;
     border-radius: 0.8rem;
 }
@@ -83,7 +135,6 @@ dialog input {
     width: 100%;
     padding: 1rem;
     border-radius: 0.8rem;
-
     outline: none;
     border: 1px solid;
 }
@@ -153,6 +204,6 @@ dialog #btnActions {
 }
 
 .active {
-    background-color: green;
+    background-color: #8b49c6;
     color: #fff;
 }
