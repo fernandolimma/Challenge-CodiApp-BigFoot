@@ -20,63 +20,65 @@
         <h1>Edição de Cardapio</h1>
     </div>
     <div class="box">
-    <div class="container">
-        <div style="display: flex; align-items: center; gap: 1rem;">
-            <h2>Categorias</h2>
-            <button id="open-modal-new-category">New</button>
-        </div>
-        <div class="categories">
-            <div class="category" onclick="showItems('bebidas')">Bebidas</div>
-            <div class="category" onclick="showItems('combos')">Combos</div>
-            <!-- Adicione mais categorias aqui -->
-        </div>
-    <div style="display: flex; align-items: center; gap: 1rem;"> 
-        <div class="items-list">
-            <h3>Itens</h3>
-            <ul id="items">
-                <!-- Itens serão adicionados dinamicamente aqui -->
-            </ul>
+        <div class="container">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <h2>Categorias</h2>
+                <button id="open-modal-new-category">New</button>
+            </div>
+            <div class="categories">
+                <div class="category" onclick="showItems('bebidas')">Bebidas</div>
+                <div class="category" onclick="showItems('combos')">Combos</div>
+                <!-- Adicione mais categorias aqui -->
+            </div>
+            <div>
+                <div style="display: flex; align-items: center; column-gap: 1rem;">
+                    <h3>Itens</h3>
+                    <button id="open-modal-btn">Adicionar Itens</button>
+                </div>
+                <div class="items-list">
+                    <ul id="items">
+                        <!-- Itens serão adicionados dinamicamente aqui -->
+                    </ul>
+                </div>
+
+            </div>
         </div>
 
-        <button id="open-modal-btn">Adicionar Itens</button>
-    </div>
-</div>
+        <!-- Modal New Category -->
+        <dialog id="modal-new-category">
+            <span class="material-symbols-outlined" id="close-modal-new-category">
+                close
+            </span>
+            <div>
+                <label for="categoryName">Nome</label><br>
+                <input type="text" placeholder="Digite a categoria" id="categoryName">
+                <br>
+            </div>
+            <button id="saveNewCategoryBtn">Salvar</button>
+        </dialog>
 
-    <!-- Modal New Category -->
-    <dialog id="modal-new-category">
-        <span class="material-symbols-outlined" id="close-modal-new-category">
-            close
-        </span>
-        <div>
-            <label for="categoryName">Nome</label><br>
-            <input type="text" placeholder="Digite a categoria" id="categoryName">
-            <br>
-        </div>
-        <button id="saveNewCategoryBtn">Salvar</button>
-    </dialog>
+        <!-- Modal -->
+        <dialog id="modal">
+            <span class="close-btn" id="close-modal">&times;</span>
 
-    <!-- Modal -->
-    <dialog id="modal">
-        <span class="close-btn" id="close-modal">&times;</span>
+            <div id="itens-list">
+            </div>
+            <div id="btnActions">
+                <button id="save-item">Salvar</button>
+            </div>
+            <button id="btnNewItem">Add Item</button>
+        </dialog>
 
-        <div id="itens-list">
-        </div>
-        <div id="btnActions">
-            <button id="save-item">Salvar</button>
-        </div>
-        <button id="btnNewItem">Add Item</button>
-    </dialog>
-
-    <!-- Item Modal -->
-    <dialog id="item-modal-details" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeItemModalDetails()">&times;</span>
-            <h2 id="item-modal-title"></h2>
-            <p id="item-modal-description"></p>
-            <img id="item-modal-image" src="" alt="Imagem do item">
-            <p id="item-modal-price"></p>
-        </div>
-    </dialog>
+        <!-- Item Modal -->
+        <dialog id="item-modal-details" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeItemModalDetails()">&times;</span>
+                <h2 id="item-modal-title"></h2>
+                <p id="item-modal-description"></p>
+                <img id="item-modal-image" src="" alt="Imagem do item">
+                <p id="item-modal-price"></p>
+            </div>
+        </dialog>
     </div>
 </body>
 

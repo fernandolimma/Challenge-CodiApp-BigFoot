@@ -127,7 +127,9 @@ function showItems(category) {
         const listItem = document.createElement('li');
         const btnExcluir = document.createElement('span')
 
-        btnExcluir.innerText = 'x'
+        btnExcluir.innerHTML = '<span class="material-symbols-outlined">close</span>'
+        btnExcluir.id = 'btn-excluir-item'
+        btnExcluir.style.cursor = 'pointer'
         btnExcluir.onclick = () => deleteItem(category, index)
 
         listItem.textContent = item.name

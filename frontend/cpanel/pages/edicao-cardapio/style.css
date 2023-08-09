@@ -6,7 +6,7 @@
 
 body{
     background-image: url(fundologin.png);
-    background-size: cover;
+    background-size: auto;
 }
 
 .navbar{
@@ -20,6 +20,10 @@ body{
     overflow: hidden;
 }
 
+.navbar h1 {
+    padding: 0.5rem 1rem 0 1rem;
+}
+
 .box{
     color: white;
     position: absolute;
@@ -27,15 +31,9 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px;
+    padding: 1.5rem;
     border-radius: 15px;
-    width: 50%;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 1.2rem;
+    width: clamp(300px, 50%, 500px);
 }
 
 #open-modal-new-category{
@@ -43,7 +41,6 @@ body{
     color: white;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 1rem;
     padding: 8px 16px;
     border: none;    
     border-radius: 5px;
@@ -51,8 +48,8 @@ body{
 
 .categories {
     display: flex;
-    gap: 1px;
-   
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 .category {
@@ -74,11 +71,20 @@ ul {
 }
 
 .items-list div {
-    /* border: 1px solid blue; */
-    max-width: 50%;
+    width: 100%;
+    padding: 0 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    background-color: #888;
+    border-radius: 0.5rem;
+}
+
+.items-list div #btn-excluir-item {
+    background-color: red;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
 }
 
 #open-modal-btn{
@@ -86,7 +92,6 @@ ul {
     color: white;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 1rem;
     padding: 8px 16px;
     border: none;    
     border-radius: 5px;
@@ -204,6 +209,6 @@ dialog #btnActions {
 }
 
 .active {
-    background-color: #8b49c6;
+    background-color: #61a2a0;
     color: #fff;
 }
