@@ -10,7 +10,6 @@ const buttonOpenCart = document.querySelector ('.header .navigation .button-open
 
 
 const database = {
-
   'burgers': [
     {
       id: 0,
