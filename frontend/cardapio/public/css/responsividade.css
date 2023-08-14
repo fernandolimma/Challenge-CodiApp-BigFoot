@@ -48,8 +48,13 @@
     cursor: pointer;
   }
 
-  .header .navigation .open-cart {
-    right: 8rem;
+.header .navigation .button-open-cart  {
+  margin-right: 4rem;
+}
+
+  body.mobile   .header .navigation .button-open-cart  {
+    top: 4rem;
+    margin-right: 1rem;
   }
 
   body.mobile .header .navigation .open-mobile {
@@ -104,4 +109,27 @@
    overflow: auto;
    padding: 1rem;
   }
+
+  body.show-cart main .section-cart .content {
+    flex-direction: column;
+    overflow-y: auto;
+    padding-bottom: 2.5rem;
+  }
+
+  body.show-cart main .section-cart .content .address .search-cep {
+    flex-direction: column;
+  }
+
+  body.show-cart main .section-cart .content .address .cep {
+    width: 100%;
+  }
+
+  body.show-cart main .section-cart .content .address .number-house {
+   flex-direction: column;
+  }
+
+  body.show-cart main .section-cart .content .address .number-house .number {
+    width: 100%;
+  }
+
 }

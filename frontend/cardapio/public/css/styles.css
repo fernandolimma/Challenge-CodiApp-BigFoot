@@ -31,7 +31,6 @@ html {
 
 body {
   background-color: var(--gray100);
-  position: relative;
 }
 
 .layout {
@@ -51,7 +50,8 @@ body {
   z-index: 10;
 }
 
-.header .box-logo, footer .box-logo {
+.header .box-logo,
+footer .box-logo {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -162,12 +162,15 @@ body.show .header .navigation .box-hour ul {
   10% {
     background-color: var(--cyan400);
   }
+
   30% {
     background-color: var(--cyan600);
   }
+
   60% {
     background-color: var(--cyan400);
   }
+
   90% {
     background-color: var(--cyan600);
   }
@@ -181,6 +184,7 @@ body.show .header .navigation .box-hour ul {
   position: relative;
   z-index: 50;
   cursor: pointer;
+
 }
 
 .header .navigation .button-open-cart i span {
@@ -238,7 +242,6 @@ body.show .header .navigation .box-hour ul {
 /* =======================>  links-caterory <================================*/
 main {
   padding: 1.5rem 0;
-  position: relative;
 }
 
 /* =======================>  links-caterory <================================*/
@@ -256,7 +259,7 @@ main .links-category ul li {
 
 main .links-category ul li a {
   text-decoration: none;
-  background-color:  var(--cyan500);
+  background-color: var(--cyan500);
   padding: 0.5rem 1rem;
   border-radius: 4px;
   font-size: 1rem;
@@ -274,7 +277,7 @@ main .search-cardapio {
 }
 
 main .search-cardapio input {
-  width: 100%; 
+  width: 100%;
   padding: 1.5rem;
   border: none;
   outline: none;
@@ -293,14 +296,16 @@ main .title {
 }
 
 /* =======================> cards products <================================*/
-main .category-hamburgers, main .category-drink {
+main .category-hamburgers,
+main .category-drink {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   margin-top: 1.5rem;
-} 
+}
 
-main .category-hamburgers .card-hamburgers, main .category-drink .card-drinks {
+main .category-hamburgers .card-hamburgers,
+main .category-drink .card-drinks {
   width: 100%;
   border-radius: 6px;
   overflow: hidden;
@@ -308,33 +313,38 @@ main .category-hamburgers .card-hamburgers, main .category-drink .card-drinks {
   box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-main .card-hamburgers img, main .card-drinks img {
+main .card-hamburgers img,
+main .card-drinks img {
   width: 100%;
   height: 12rem;
   object-fit: cover;
 }
 
-main .card-hamburgers .info, main .card-drinks .info {
+main .card-hamburgers .info,
+main .card-drinks .info {
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-main .card-hamburgers .info .title-card, main .card-drinks .info .title-card {
+main .card-hamburgers .info .title-card,
+main .card-drinks .info .title-card {
   font-size: 1rem;
   font-weight: 700;
   color: var(--gray500);
 }
 
-main .card-hamburgers .info .description-card, main .card-drinks .info .description-card {
- font-size: 0.875rem;
- font-weight: 500;
- font-style: italic;
- color: var(--gray400);
-} 
+main .card-hamburgers .info .description-card,
+main .card-drinks .info .description-card {
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--gray400);
+}
 
-main .card-hamburgers .info .price-card, main .card-drinks .info .price-card {
+main .card-hamburgers .info .price-card,
+main .card-drinks .info .price-card {
   font-size: 1.125rem;
   font-weight: 700;
   color: var(--cyan500);
@@ -361,13 +371,14 @@ main .info .button-add:hover {
 }
 
 /* =======================> cart <================================*/
- main .section-cart {
-  position: absolute;
-  top: 5rem;
-  right: 0;
+main .section-cart {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--gray100);
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -375,64 +386,216 @@ main .info .button-add:hover {
   visibility: hidden;
   transform: translateY(100%);
   transition: 200ms;
- }
+}
 
- body.show-cart main .section-cart {
+body.show-cart main .section-cart {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
- }
+}
 
- main .section-cart .info {
-  margin-top: 5rem;
- }
-
- main .section-cart .cart {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  border-radius: 6px;
+body.show-cart {
   overflow: hidden;
-  box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.2);
-  margin-top: 1rem;
- }
+}
 
- main .section-cart .cart .box-cart {
+body.show-cart main .section-cart .header-cart {
   display: flex;
   align-items: center;
-  background-color: var(--gray200);
- }
+  justify-content: space-between;
+  padding: 2rem 0;
+}
 
- main .section-cart .cart .box-cart .info-product {
+.header-cart button {
+  background-color: transparent;
+  border: none;
+  font-size: 2.5rem;
+  color: var(--gray500);
+  cursor: pointer;
+}
+
+body.show-cart main .section-cart .content {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding-left: 1rem;
- }
+  gap: 2rem;
+}
 
-
- main .section-cart .cart .box-cart img{
-  width: 5rem;
-  height: 5rem;
-  object-fit: cover;
- }
-
- main .section-cart .cart-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
- }
-
- main .section-cart .cart-footer h4 {
-  font-size: 1.5rem;
+body.show-cart main .section-cart .content span {
+  font-size: 1rem;
   color: var(--gray700);
- }
+  margin-bottom: 1rem;
+}
 
- main .section-cart .cart-footer i {
-  font-size: 2rem;
-  color: var(--cyan700);
- }
+body.show-cart main .section-cart .content .address p {
+  font-size: 0.875rem;
+  line-height: 130%;
+  color: var(--gray500);
+  margin-bottom: 1rem;
+}
+
+body.show-cart main .section-cart .content .address .cep,
+body.show-cart main .section-cart .content .address strong,
+body.show-cart main .section-cart .content .address input {
+  background-color: var(--gray200);
+  border: none;
+  padding: 12px;
+  outline: none;
+  color: var(--gray500);
+  border-radius: 4px;
+}
+
+body.show-cart main .section-cart .content .address .search-cep {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+
+body.show-cart main .section-cart .content .address .search-cep button {
+  background-color: var(--cyan600);
+  border: none;
+  outline: none;
+  width: 100%;  
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: 700;
+  color: var(--gray100);
+  cursor: pointer;
+}
+
+body.show-cart main .section-cart .content .address .road {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+body.show-cart main .section-cart .content .address .number-house {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+body.show-cart main .section-cart .content .address .number-house .complement {
+  flex: 1;
+}
+
+body.show-cart main .section-cart .content .address .info-city {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+body.show-cart main .section-cart .content .address .info-city .bairro {
+  width: 8rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+} 
+
+body.show-cart main .section-cart .content .address .info-city .city {
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+body.show-cart main .section-cart .content .address .info-city .state {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+body.show-cart main .section-cart .content .payment .form-payment {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+body.show-cart main .section-cart .content .payment .form-payment button {
+  width: 12rem;
+  padding: 12px;
+  background-color: var(--gray200);
+  border: none;
+  border-radius: 4px;
+  font-weight: 300;
+  color: var(--gray500);
+}
+
+body.show-cart main .section-cart .content .payment .form-payment button:hover {
+  background-color: var(--cyan600);
+  color: var(--white);
+  cursor: pointer;
+}
+
+body.show-cart main .section-cart .content .info-cart .cart {
+  width: 320px;
+  max-height: 100px;
+  overflow: auto;
+  margin-bottom: 1.5rem;
+}
+
+body.show-cart main .section-cart .content .info-cart .cart .box-cart {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--gray300);
+  padding-right: 0.5rem;
+  box-shadow: 0.5em 0.5em 1em rgba(109, 89, 89, 0.2);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: var(--gray500);
+  margin-bottom: 0.5rem;
+}
+
+body.show-cart main .section-cart .content .info-cart .cart .box-cart img {
+  width: 4rem;
+}
+
+body.show-cart main .section-cart .content .info-cart .cart .box-cart .info-product {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+body.show-cart main .section-cart .content .info-cart .total  {
+  width: 100%;
+}
+
+body.show-cart main .section-cart .content .info-cart .total textarea {
+  width: 100%;
+  padding: 12px;
+  resize: none;
+}
+
+body.show-cart main .section-cart .content .info-cart .total div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+body.show-cart main .section-cart .content .info-cart .total div strong, 
+body.show-cart main .section-cart .content .info-cart .total div p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray500);
+}
+
+body.show-cart main .section-cart .content .info-cart .total .confirmed-order {
+  display: inline-block;
+  text-align: center;
+  margin-top: 1.5rem;
+  background-color: var(--cyan800);
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight:700;
+  color: var(--gray100);
+  cursor: pointer;
+  text-decoration: none;
+}
 /* =======================> footer <================================*/
 footer {
   margin-top: 10rem;
@@ -452,7 +615,8 @@ footer .info-footer {
   justify-content: space-between;
 }
 
-footer .info-footer .contact, footer .info-footer .address {
+footer .info-footer .contact,
+footer .info-footer .address {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -478,13 +642,17 @@ footer p {
 
 
 @media(max-width: 768px) {
-  main .category-hamburgers, main .category-drink {
+
+  main .category-hamburgers,
+  main .category-drink {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media(max-width: 490px) {
-  main .category-hamburgers, main .category-drink {
+
+  main .category-hamburgers,
+  main .category-drink {
     grid-template-columns: 1fr;
   }
 }

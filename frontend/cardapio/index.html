@@ -11,9 +11,10 @@
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <title>Big Food</title>
 </head>
+Coffee Delivery - Jean Arruda
 
-<body>
-  <header class="header">  <!--Header-->
+<body class="">
+  <header class="header"> <!--Header-->
     <nav class="navigation layout">
       <div class="box-logo">
         <img src="./public//assets/hamburguer.svg" alt="Imagem de um hamburguer" />
@@ -99,17 +100,73 @@
     <section class="category-drink layout"><!--category drinks---> </section>
 
     <div class="section-cart"><!-- carrinho -->
-      <div class="info layout">
-          <h3>Informações do pedido</h3>
-          <strong>Total: R$32,00</strong>
+      <div class="header-cart layout">
+        <div class="box-logo">
+          <img src="./public//assets/hamburguer.svg" alt="Imagem de um hamburguer" />
+          <strong>Codi Lanches</strong>
+        </div>
+        <button class="close-cart">
+          <i class="ph ph-x-circle"></i>
+        </button>
       </div>
-      <div class="cart layout"></div>
 
-      <div class="cart-footer layout">
-        <h4>Continue comprando abaixo </h4>
-        <i class="ph ph-arrow-circle-down"></i>
+      <div class="layout content">
+        <div class="address">
+          <span>Endereço de Entrega</span>
+          <p>Informe o endereço onde deseja receber seu pedido</p>
+
+          <div class="inputs-info">
+            <form action="">
+             <div class="search-cep">
+              <input class="cep" type="text" name="cep" placeholder="CEP">
+              <button class="search-address">Buscar</button>
+             </div>
+              <strong class="road">Rua</strong>
+              <div class="number-house">
+                <input class="number" type="text" name="number" placeholder="Número">
+                <input class="complement" type="text" name="complement" placeholder="Complemento">
+              </div>
+              <div class="info-city">
+                <strong class="bairro">Bairro</strong>
+                <strong class="city">Cidade</strong>
+                <strong class="state">UF</strong>
+              </div>
+            </form>
+          </div>
+
+          <div class="payment">
+            <span>Pagamento</span>
+            <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
+            <div class="form-payment">
+              <button class="credit">Cartão de crédito</button>
+              <button class="debit">Cartão de débito</button>
+              <button class="money">Dinheiro</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-cart">
+          <div class="cart"></div>
+
+          <div class="total">
+            <textarea placeholder="Observações"></textarea>
+            <div class="total-items">
+              <strong>Total de items</strong>
+              <p class="value-total-items">R$ 0,00</p>
+            </div>
+            <div class="entrega">
+              <strong>Entrega</strong>
+              <p>R$ 3,00</p>
+            </div>
+            <div class="total-price">
+              <strong>Total</strong>
+              <p class="value-total-price">R$ 0,00</p>
+            </div>
+            <a href="#" class="confirmed-order" target="_blank">Confirmar pedido</a>
+          </div>
+
+        </div>
       </div>
-    </div>
   </main>
 
   <footer><!--footer-->

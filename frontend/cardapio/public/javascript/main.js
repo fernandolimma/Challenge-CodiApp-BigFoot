@@ -3,10 +3,29 @@ const buttonRemoveHour = document.querySelector(".close-hour");
 const body = document.querySelector("body");
 const buttonOpenMobile = document.querySelector('.open-mobile')
 const buttonCloseMobile = document.querySelector('.close-mobile')
+const buttonCloseCart = document.querySelector('.close-cart')
 const hamburguer = document.querySelector('.category-hamburgers')
 const drinks = document.querySelector('.category-drink')
-let quantity = document.querySelector ('.header .navigation .button-open-cart i span')
-const buttonOpenCart = document.querySelector ('.header .navigation .button-open-cart')
+const buttonOpenCart = document.querySelector('.header .navigation .button-open-cart')
+const quantity = document.querySelector('.header .navigation .button-open-cart i span')
+const totalItems = document.querySelector('.value-total-items')
+const totalPrice = document.querySelector('.value-total-price')
+const road = document.querySelector('.road')
+const city = document.querySelector('.city')
+const state = document.querySelector('.state')
+const bairro = document.querySelector('.bairro')
+const number = document.querySelector('.number')
+const complement = document.querySelector('.complement')
+const searchAddress = document.querySelector('.search-address')
+const searchAddressInput = document.querySelector('.cep')
+const form = document.querySelector('form')
+const confirmedOrder = document.querySelector('.confirmed-order')
+const paymentDebito = document.querySelector('.debito')
+const paymentCredito = document.querySelector('.credito')
+const paymentMoney = document.querySelector('.money')
+let textArea = document.querySelector('textarea')
+let chosenPaymentMethod = ''
+let products = []
 
 
 const database = {
@@ -78,8 +97,12 @@ buttonRemoveHour.addEventListener("click", () => {
 });
 
 buttonOpenCart.addEventListener("click", () => {
-  body.classList.toggle("show-cart");
+  body.classList.add("show-cart");
 });
+
+buttonCloseCart.addEventListener('click', () => {
+  body.classList.remove('show-cart')
+})
 
 
 
@@ -111,7 +134,7 @@ function startProducts() {
     </div>
     `
   })
-}  
+}
 startProducts()
 
 let buttonsAdd = document.querySelectorAll('.button-add')
@@ -132,6 +155,13 @@ function updateCart() {
         </div>
       </div>
       `
+      products.push({
+        id: burger.id,
+        title: burger.title,
+        description: burger.description,
+        price: burger.price,
+        quantity: burger.quantity
+      })
     }
   })
 
@@ -147,9 +177,35 @@ function updateCart() {
         </div>
       </div>
       `
+      products.push({
+        id: drink.id,
+        title: drink.title,
+        description: drink.description,
+        price: drink.price,
+        quantity: drink.quantity
+      })
     }
   })
   quantity.innerHTML = document.querySelectorAll('.box-cart').length
+}
+
+function sumItemsCart() {
+  let total = 0
+  let entrega = 3.00
+  database.burgers.map(burger => {
+    total += burger.price * burger.quantity
+  })
+  database.drinks.map(drink => {
+    total += drink.price * drink.quantity
+  })
+
+  totalItems.innerHTML = `R$ ${total.toFixed(2).replace('.', ',')}`
+
+  total = Number(total.toFixed(2)) + Number(entrega.toFixed(2))
+
+  totalPrice.innerHTML = `R$ ${total.toFixed(2).replace('.', ',')}`
+
+  return total
 }
 
 for (let i = 0; i < buttonsAdd.length; i++) {
@@ -166,5 +222,85 @@ for (let i = 0; i < buttonsAdd.length; i++) {
       }
     })
     updateCart()
+    sumItemsCart()
   })
 }
+
+searchAddress.addEventListener('click', async (e) => {
+  e.preventDefault()
+  const cep = searchAddressInput.value
+
+  const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+  const data = await response.json()
+
+  const dataAddress = {
+    road: data.logradouro,
+    city: data.localidade,
+    state: data.uf,
+    bairro: data.bairro
+  }
+
+  road.innerHTML = dataAddress.road
+  city.innerHTML = dataAddress.city
+  state.innerHTML = dataAddress.state
+  bairro.innerHTML = dataAddress.bairro
+
+  number.focus()
+
+  const buttons = document.querySelectorAll('.form-payment button')
+
+  buttons.forEach(button => {
+
+    button.addEventListener('click', () => {
+      chosenPaymentMethod = button.textContent
+    })
+  })
+
+})
+
+confirmedOrder.addEventListener('click', () => {
+  let total = 0
+  let entrega = 3.00
+  database.burgers.map(burger => {
+    total += burger.price * burger.quantity
+  })
+  database.drinks.map(drink => {
+    total += drink.price * drink.quantity
+  })
+  total = Number(total.toFixed(2)) + Number(entrega.toFixed(2))
+
+  const messege = {
+    cep: searchAddressInput.value,
+    city: city.textContent,
+    state: state.textContent,
+    bairro: bairro.textContent,
+    road: road.textContent,
+    number: number.value,
+    complement: complement.value,
+    paymentMethod: chosenPaymentMethod,
+    observed: textArea.value,
+    totalPriceItems: total.toFixed(2).replace('.', ','),
+  }
+
+  let items = ''
+  products.forEach(item => {
+    items += `*${item.quantity}x* --- ${item.title} ........... R$ ${item.price.toFixed(2).replace('.',',')} \n`
+  })
+
+  let text = 'Olá, gostaria de fazerum pedido:'
+  text += `\n*Itens do pedido*${items}`
+  text += `\n\n*Endereço de entrega:*`
+  text += `\n${messege.road},${messege.complement}, ${messege.number}, ${messege.bairro}`
+  text += `\n${messege.city}, ${messege.state}`
+  text += `\n\n*Observações:*`
+  text += `\n${messege.observed}`
+  text += `\n\n*Total (com entrega): R$ ${messege.totalPriceItems}*`
+
+ 
+
+
+  let encode = encodeURI(text)
+  let URL = `https://wa.me/5532998139420?text=${encode}`
+
+  confirmedOrder.href = URL
+})
