@@ -6,6 +6,7 @@ const buttonCloseMobile = document.querySelector('.close-mobile')
 const buttonCloseCart = document.querySelector('.close-cart')
 const hamburguer = document.querySelector('.category-hamburgers')
 const drinks = document.querySelector('.category-drink')
+const acai = document.querySelector('.category-acai')
 const buttonOpenCart = document.querySelector('.header .navigation .button-open-cart')
 const quantity = document.querySelector('.header .navigation .button-open-cart i span')
 const totalItems = document.querySelector('.value-total-items')
@@ -33,28 +34,28 @@ const database = {
     {
       id: 0,
       image:
-        "https://img.freepik.com/fotos-premium/hamburguer-com-queijo-cheddar-em-prato-de-madeira_74692-589.jpg?size=626&ext=jpg&ga=GA1.1.462900268.1690408347&semt=sph",
-      title: "X-Burguer",
-      description: "Pão brioche ,Carne, cheddar , farofa de bacon , salada",
-      price: 19.9,
+        "https://assets.unileversolutions.com/recipes-v2/230446.jpg",
+      title: "Hambúrguer Duplo",
+      description: "Saboroso hambúrguer duplo com vinagrete e nossa deliciosa maionese Hellmann's.",
+      price: 29.90,
       quantity: 0,
     },
     {
       id: 1,
       image:
-        "https://www.cnnbrasil.com.br/viagemegastronomia/wp-content/uploads/sites/5/2022/05/origem-do-hambuguer-cnn4.jpg?w=1200&h=900&crop=1",
-      title: "X-Burguer",
-      description: "Pão brioche ,Carne, cheddar , farofa de bacon , salada",
-      price: 19.9,
+        "https://assets.unileversolutions.com/recipes-v2/230447.jpg?imwidth=1600",
+      title: "Hambúrguer Estilo Americano",
+      description: "Aquele tradicional hambúrguer americano, com carne, tomate, alface, cebola e picles!",
+      price: 23.55,
       quantity: 0,
     },
     {
       id: 2,
       image:
-        "https://s7d1.scene7.com/is/image/mcdonalds/DC_202006_0001_Hamburger_Alt_832x472:1-3-product-tile-desktop?wid=765&hei=472&dpr=off",
-      title: "X-Burguer",
-      description: "Pão brioche ,Carne, cheddar , farofa de bacon , salada",
-      price: 19.9,
+        "https://assets.unileversolutions.com/recipes-v2/211794.jpg?imwidth=1600",
+      title: "Hambúrguer Parmegiana",
+      description: "Hambúrguer e Parmegiana! Com o queijo derretido e o sabor do molho de tomate",
+      price: 27.50,
       quantity: 0,
     },
   ],
@@ -62,18 +63,52 @@ const database = {
   'drinks': [
     {
       id: 3,
-      image: 'https://ribeirao.emporiotartufo.com.br/image/cache/catalog/produtos/Coca-Cola/116333-coca-cola-lata-350ml-1-1000x667.png',
-      title: 'Coca Cola',
-      description: 'Bebida Coca Cola',
+      image: 'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/10/james-yarema-wQFmDhrvVSs-unsplash.jpg?w=1200&h=900&crop=1',
+      title: 'Coca Cola Lata',
+      description: 'Pega esse sabor',
       price: 9.90,
       quantity: 0,
     },
     {
       id: 4,
+      image: 'https://cdn11.bigcommerce.com/s-axqppvczl4/images/stencil/1280x1280/products/830/14941/e15211e1-3d04-4ffc-a940-456c96973c7e__48699.1650619047.jpg?c=2',
+      title: 'Fanta Laranja Lata',
+      description: 'Aquele sabor original',
+      price: 8.95,
+      quantity: 0,
+    },
+    {
+      id: 5,
       image: 'https://supsaojoao.com.br/4464-large_default/agua-mineral-lind-agua-500ml-cgas.jpg',
       title: 'Água sem gás',
-      description: 'Água mineral',
+      description: 'Tá com sede, beba água',
       price: 6.90,
+      quantity: 0,
+    },
+  ],
+  'acai': [
+    {
+      id: 6,
+      image: 'https://www.receiteria.com.br/wp-content/uploads/receitas-de-acai-na-tigela-2.jpg.webp',
+      title: 'Açaí banana e morango',
+      description: 'Decore com três morangos cortados ao meio e a outra metade da banana',
+      price: 14.70,
+      quantity: 0,
+    },
+    {
+      id: 7,
+      image: 'https://www.receiteria.com.br/wp-content/uploads/receitas-de-acai-na-tigela-5.jpg.webp',
+      title: 'Açaí na tigela fit',
+      description: '2 polpas de açaí, 1 banana média, 50 ml de água, adoçante a gosto',
+      price: 19.90,
+      quantity: 0,
+    },
+    {
+      id: 8,
+      image: 'https://www.receiteria.com.br/wp-content/uploads/receitas-de-acai-na-tigela-4.jpg.webp',
+      title: 'Açaí na tigela proteico com manga',
+      description: '1 polpa de açai, manga protein a gosto, granola a gosto',
+      price: 13.60,
       quantity: 0,
     },
   ]
@@ -134,6 +169,20 @@ function startProducts() {
     </div>
     `
   })
+
+  database.acai.map(acais => {
+    acai.innerHTML += `
+    <div class='card-drinks'>
+      <img src="${acais.image}" alt="${acais.title}"/>
+      <div class="info">
+        <p class="title-card">${acais.title}</p>
+        <p class="description-card">${acais.description}</p>
+        <p class="price-card">R$ ${acais.price.toFixed(2)}</p>
+        <button key="${acais.id}" class="button-add">Adicionar</button>
+      </div>
+    </div>
+    `
+  })
 }
 startProducts()
 
@@ -155,13 +204,7 @@ function updateCart() {
         </div>
       </div>
       `
-      products.push({
-        id: burger.id,
-        title: burger.title,
-        description: burger.description,
-        price: burger.price,
-        quantity: burger.quantity
-      })
+     
     }
   })
 
@@ -177,16 +220,25 @@ function updateCart() {
         </div>
       </div>
       `
-      products.push({
-        id: drink.id,
-        title: drink.title,
-        description: drink.description,
-        price: drink.price,
-        quantity: drink.quantity
-      })
+    }
+  })
+
+  database.acai.map(acai => {
+    if (acai.quantity > 0) {
+      cart.innerHTML += `
+      <div class='box-cart'>
+        <img src="${acai.image}" alt="${acai.title}"/>
+        <div class="info-product">
+          <p class="title-card">${acai.title}</p>
+          <p class="qtd-card">Qtd: ${acai.quantity}</p>
+          <p class="price-card">R$ ${acai.price.toFixed(2)}</p>
+        </div>
+      </div>
+      `
     }
   })
   quantity.innerHTML = document.querySelectorAll('.box-cart').length
+  console.log(products)
 }
 
 function sumItemsCart() {
@@ -197,6 +249,9 @@ function sumItemsCart() {
   })
   database.drinks.map(drink => {
     total += drink.price * drink.quantity
+  })
+  database.acai.map(acai => {
+    total += acai.price * acai.quantity
   })
 
   totalItems.innerHTML = `R$ ${total.toFixed(2).replace('.', ',')}`
@@ -214,11 +269,37 @@ for (let i = 0; i < buttonsAdd.length; i++) {
     database.burgers.map(burger => {
       if (burger.id == key) {
         burger.quantity++
+        
+          products.push({
+            title: burger.title,
+            price: burger.price,
+            quantity: burger.quantity
+          })
+      
       }
     })
     database.drinks.map(drink => {
       if (drink.id == key) {
         drink.quantity++
+        if(drink.quantity > 0) {
+          products.push({
+            title: drink.title,
+            price: drink.price,
+            quantity: drink.quantity
+          })
+        }
+      }
+    })
+    database.acai.map(acai => {
+      if (acai.id == key) {
+        acai.quantity++
+        if(acai.quantity > 0) {
+          products.push({
+            title: acai.title,
+            price: acai.price,
+            quantity: acai.quantity
+          })
+        }
       }
     })
     updateCart()
@@ -258,14 +339,20 @@ searchAddress.addEventListener('click', async (e) => {
 
 })
 
+
+
 confirmedOrder.addEventListener('click', () => {
   let total = 0
   let entrega = 3.00
+
   database.burgers.map(burger => {
     total += burger.price * burger.quantity
   })
   database.drinks.map(drink => {
     total += drink.price * drink.quantity
+  })
+  database.acai.map(acai => {
+    total += acai.price * acai.quantity
   })
   total = Number(total.toFixed(2)) + Number(entrega.toFixed(2))
 
@@ -282,25 +369,34 @@ confirmedOrder.addEventListener('click', () => {
     totalPriceItems: total.toFixed(2).replace('.', ','),
   }
 
-  let items = ''
-  products.forEach(item => {
-    items += `*${item.quantity}x* --- ${item.title} ........... R$ ${item.price.toFixed(2).replace('.',',')} \n`
+  if (products.length > 0 && messege != null) {
+
+        var text = 'Olá, gostaria de fazer um pedido:\n';
+        text += `\n*Itens do pedido:*\n\n\${items}`
+        text += `\n\n*Endereço de entrega:*`;
+        text += `\n${messege.road}, ${messege.complement}, ${messege.number}, ${messege.bairro}`;
+        text += `\n${messege.city}, ${messege.state}`;
+        text += `\n\n*Observações:*`;
+        text += `\n${messege.observed}`;
+        text += `\n\n*Total (com entrega): R$ ${messege.totalPriceItems}*`;
+    
+        var items = '';
+
+    products.forEach((item, index) => {
+      items += `*${item.quantity}x* --- ${item.title} ..... R$ ${item.price.toFixed(2).replace('.', ',')} \n`;
+  
+      if ((index + 1) === products.length) {
+        text = text.replace(/\${items}/g, items);
+  
+        let encode = encodeURI(text);
+        let URL = `https://wa.me/5532998139420?text=${encode}`;
+  
+        // Certifique-se de que confirmedOrder esteja definido corretamente
+        confirmedOrder.href = URL;
+  
+        console.log(text);
+      }
+    });
+  }
   })
 
-  let text = 'Olá, gostaria de fazerum pedido:'
-  text += `\n*Itens do pedido*${items}`
-  text += `\n\n*Endereço de entrega:*`
-  text += `\n${messege.road},${messege.complement}, ${messege.number}, ${messege.bairro}`
-  text += `\n${messege.city}, ${messege.state}`
-  text += `\n\n*Observações:*`
-  text += `\n${messege.observed}`
-  text += `\n\n*Total (com entrega): R$ ${messege.totalPriceItems}*`
-
- 
-
-
-  let encode = encodeURI(text)
-  let URL = `https://wa.me/5532998139420?text=${encode}`
-
-  confirmedOrder.href = URL
-})

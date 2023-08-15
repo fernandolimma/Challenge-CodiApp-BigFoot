@@ -132,4 +132,8 @@
     width: 100%;
   }
 
+  .total {
+   padding-bottom: 2rem;
+  }
+
 }

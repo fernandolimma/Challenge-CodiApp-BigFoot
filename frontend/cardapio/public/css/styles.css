@@ -25,10 +25,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background-color: var(--gray100);
 }
@@ -297,7 +293,8 @@ main .title {
 
 /* =======================> cards products <================================*/
 main .category-hamburgers,
-main .category-drink {
+main .category-drink, 
+main .category-acai {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
@@ -644,7 +641,8 @@ footer p {
 @media(max-width: 768px) {
 
   main .category-hamburgers,
-  main .category-drink {
+  main .category-drink,
+  main .category-acai {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -652,7 +650,8 @@ footer p {
 @media(max-width: 490px) {
 
   main .category-hamburgers,
-  main .category-drink {
+  main .category-drink,
+  main .category-acai {
     grid-template-columns: 1fr;
   }
 }
